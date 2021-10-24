@@ -18,6 +18,7 @@ Things you may want to cover:
   Post comment
   Comment like
 
+
 Tables:
 1. 
   users
@@ -40,12 +41,12 @@ Tables:
   users_location
 
 2. posts
-    user_id, content
+    user_id, content(text or images) -> Active storage for images 
   posts_tags
 3. comments
     user_id, content, post_id
-4. user_reactions
-    user_id, post_id,comment_id,reaction(+1 for like, -1 unlike)
+4. likes
+    user_id,type, id
 5. friends
     user_id1
     user_id2
