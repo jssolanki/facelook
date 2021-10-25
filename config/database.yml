@@ -21,7 +21,7 @@ default: &default
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: facelook
-  password: <%= ENV['FACELOOK_DATABASE_PASSWORD'] %>
+  password: "12345678"
   
 development:
   <<: *default
