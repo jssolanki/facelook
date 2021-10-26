@@ -21,3 +21,5 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true
   validates :emails, presence: true
 end
+
+# email uniqueness need to rethink
