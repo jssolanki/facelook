@@ -1,0 +1,14 @@
+<% if flash[:post_error] %>
+    <p><%= flash[:post_error] %></p>
+<% end %>
+
+<%= form_with model: [ user, post ]  do |form| %>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_area :content %>
+    <% user.errors.full_messages_for(:content).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <%= form.submit %>
+<% end %>

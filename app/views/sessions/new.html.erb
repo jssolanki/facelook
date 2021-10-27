@@ -1,0 +1,20 @@
+<% if flash[:notice] %>
+  <h1><%= flash[:notice] %></h1>
+<% else %>
+  <h1>Please Log in</h1>
+<% end %>
+
+<%= form_with url: sessions_path do |form| %>
+  <div>
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= link_to "Sign Up", new_user_path %>
+    <%= form.submit "Sign In!" %>
+  </div>
+<% end %>

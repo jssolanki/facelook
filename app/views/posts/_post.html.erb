@@ -1,0 +1,13 @@
+<p>
+  <h2>Post By</h2>
+  <p><%= post.user.first_name %><p>
+  <%= link_to "Edit Post", edit_user_post_path(post.user, post) %>
+  <%= link_to "Delete Post", [post.user, post], method: :delete,
+              data: { confirm: "Are you sure?" }  %>
+<p>
+<p>
+  <%= post.content %>
+  <h2>comments</h2>
+  <%= render post.comments %>
+  <%= render 'comments/form', { user: post.user, post: post, comment: Comment.new } %>
+<p>

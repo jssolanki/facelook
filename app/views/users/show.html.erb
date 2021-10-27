@@ -1,0 +1,13 @@
+<% if flash[:error] %>
+  <h1><%= flash[:error] %></h1>
+<% end %>
+<h1><%= current_user.first_name %></h1>
+
+<%= render 'form', { user: current_user } %>
+
+<%= link_to "Sign out", session_path, method:"delete" %>
+
+<h2>What's on your mind</h2>
+<%= render 'posts/form', { user: current_user, post: Post.new } %>
+
+<%= render current_user.posts %>

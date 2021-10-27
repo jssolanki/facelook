@@ -1,0 +1,59 @@
+<%= form_with model: user  do |form| %>
+  <div>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+     <% user.errors.full_messages_for(:first_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+
+    <%= form.label :middle_name %>
+    <%= form.text_field :middle_name %>
+     <% user.errors.full_messages_for(:middle_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+    
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+     <% user.errors.full_messages_for(:last_name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :emails %>
+    <%= form.text_field :emails %>
+    <% user.errors.full_messages_for(:emails).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+<% if !user %>
+  <div>
+    <%= form.label :password %>
+    <%= form.password_field :password %><br>
+    <% user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+<% end %>
+  
+  <div>
+  <%= form.label :relationship %><br>
+  <%= form.select :relationship, ['Married', 'Single', 'Live-In', 'Complicated'], default: 'public' %>
+  <% user.errors.full_messages_for(:relationship).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+  <%= form.label :gender %><br>
+  <%= form.select :gender, ['Male', 'Female', 'Transgender'], default: 'public' %>
+  <% user.errors.full_messages_for(:gender).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_25_164459) do
+ActiveRecord::Schema.define(version: 2021_10_26_071836) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2021_10_25_164459) do
     t.string "language"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password"
+    t.string "password_digest"
     t.check_constraint "(gender)::text = ANY ((ARRAY['Male'::character varying, 'Female'::character varying, 'Transgender'::character varying])::text[])", name: "check_gender_constraint"
   end
 
