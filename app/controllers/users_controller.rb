@@ -11,6 +11,10 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit
+    @user = User.find(session[:user_id])
+  end
+
   def update
     @user = User.find(session[:user_id])
 

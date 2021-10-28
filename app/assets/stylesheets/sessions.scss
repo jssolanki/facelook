@@ -1,3 +1,88 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import '../stylesheets/mixins/input';
+
+.login-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+
+  .login__summary {
+    box-sizing: border-box;
+    margin-right: 0;
+    width: 580px;
+  }
+
+  .login__box {
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1), 0 8px 16px rgba(0, 0, 0, .1);
+    box-sizing: border-box;
+    margin: 40px 0 0;
+    padding: 20px 0 28px;
+    width: 396px;
+  }
+
+  .login__btn {
+    background-color: #1877f2;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    line-height: 48px;
+    padding: 0 16px;
+    width: 332px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .sign_up_btn {
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 48px;
+    padding: 0 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    white-space: nowrap;
+    background-color: #42b72a;
+    color: #fff;
+  }
+
+
+  .brand-logo {
+    height: 106px;
+    width: 301px;
+  }
+
+  .input-box {
+    width: 364px;
+    margin: auto;
+    padding: 6px 0px;
+    font-size: 17px;
+
+    .input-label {
+      display: inline;
+    }
+
+    input {
+      @include inputbox;
+      width: 330px;
+    }
+  }
+}
+
+@media (max-width:960px) {
+  .login-container {
+    flex-direction: column;
+
+    .login__summary {
+      width: 400px;
+    }
+  }
+}

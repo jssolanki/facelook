@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: rgb(240, 242, 245)
+}
+
+.hide {
+  display: none;
+}

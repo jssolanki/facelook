@@ -1,3 +1,78 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+@import "../stylesheets/mixins/input";
+@import "../stylesheets/partials/post";
+@import "../stylesheets/partials/post_card";
+
+.input-box {
+  margin: auto;
+  padding: 6px 0px;
+  font-size: 17px;
+
+  .input-label {
+    display: inline;
+  }
+
+  input {
+    @include inputbox;
+    margin-right: 6px;
+  }
+
+  .emails {
+    width: 250px;
+  }
+}
+
+.signup-name-box {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.signup_btn {
+  background: none;
+  background-color: #00a400;
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  height: 36px;
+  overflow: hidden;
+  padding: 0 32px;
+  text-shadow: none;
+}
+
+.signup-container {
+  display: inline-block;
+  background-color: #fff;
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+  overflow: hidden;
+  padding: 10px 32px;
+  text-shadow: none;
+  margin: 24px 0px;
+}
+
+.signup-container_box {
+  display: inline-block;
+  text-align: left;
+}
+
+.timeline-container{
+  text-align: center;
+  .timeline-container-box{
+    width: 590px;
+    display: inline-block;
+    text-align: left;
+    .post_input {
+      width: 558px;
+    }
+    .post_btn{
+      width: 100%;
+    }
+  }
+}

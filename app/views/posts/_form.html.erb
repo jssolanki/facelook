@@ -4,11 +4,10 @@
 
 <%= form_with model: [ user, post ]  do |form| %>
   <div>
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.text_area :content, placeholder: "What's on your mind", class: "post_input" %>
     <% user.errors.full_messages_for(:content).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
-  <%= form.submit %>
+  <%= form.submit "Post", class: "post_btn" %>
 <% end %>

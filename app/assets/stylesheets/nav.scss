@@ -1,0 +1,69 @@
+.brand-logo svg {
+  height: 36px;
+}
+
+.nav-container {
+  height: 54px;
+  z-index: 99;
+  width: 100%;
+  position: fixed;
+  align-items: center;
+  padding: 8px 8px 8px 8px;
+  background-color: #ffffff;
+  box-shadow: 2px 2px 3px #3333334f;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.user-login_container {
+  right: 18px;
+  position: absolute;
+  top: 58px;
+
+  ul {
+    list-style: none;
+    border-radius: 4px;
+    box-shadow: 3px 3px 16px 3px #55555570;
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    transition: all 0.3s ease-in;
+    padding: 0;
+    margin: 0;
+
+    li {
+      border-bottom: 1px solid #dddddd;
+      display: block;
+      padding: 12px 2em 12px 1.2em;
+      white-space: nowrap;
+      position: relative;
+      font-weight: 400;
+      color: #656565;
+    }
+  }
+}
+
+.user-avatar {
+  position: absolute;
+  cursor: pointer;
+  right: 8px;
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+  border-radius: 50%;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyNTYiIHI9IjI1NiIgZmlsbD0iI2M1ZGFmOCIvPjxwYXRoIGQ9Ik00NDIuMyA0MDUuN2MtMTEuMS04LjgtMjQuNy0xNS4xLTM5LjQtMTguMmwtNzAuMi0xNC4xYy03LjQtMS40LTEyLjctOC0xMi43LTE1Ljd2LTE2LjFjNC41LTYuMyA4LjgtMTQuOCAxMy4yLTIzLjYgMy41LTYuOCA4LjctMTcuMSAxMS4zLTE5LjcgMTQuMi0xNC4zIDI3LjktMzAuMyAzMi4yLTUxIDQtMTkuNC4xLTI5LjYtNC41LTM3LjggMC0yMC40LS42LTQ2LTUuNS02NC43LS42LTI1LjItNS4yLTM5LjQtMTYuNy01MS44LTguMS04LjgtMjAuMS0xMC44LTI5LjctMTIuNS0zLjgtLjYtOS0xLjUtMTAuOS0yLjYtMTcuMS05LjItMzMuOS0xMy43LTU0LTE0LjEtNDIuMSAxLjctOTQgMjguNS0xMTEuMyA3Ni40LTUuNCAxNC42LTQuOCAzOC41LTQuNCA1Ny43bC0uNCAxMS42Yy00LjEgOC4xLTguMiAxOC4zLTQuMiAzNy44IDQuMiAyMC43IDE4IDM2LjggMzIuNCA1MS4yIDIuNCAyLjQgNy43IDEyLjggMTEuMiAxOS42IDQuNSA4LjggOC44IDE3LjIgMTMuMyAyMy41djE2LjFjMCA3LjYtNS4zIDE0LjItMTIuNyAxNS43TDEwOSAzODcuNWMtMTQuNiAzLjEtMjguMiA5LjQtMzkuMyAxOC4yLTMuNSAyLjgtNS42IDYuOC02IDExLjNzMS4xIDguNyA0LjEgMTJjNDcuOCA1Mi43IDExNi40IDgzIDE4OC4yIDgzczE0MC40LTMwLjIgMTg4LjItODNjMy0zLjMgNC41LTcuNiA0LjEtMTIuMS0uNC00LjQtMi42LTguNS02LTExLjJ6IiBmaWxsPSIjNzI5YmM0Ii8+PC9zdmc+") no-repeat center center;
+}
+
+.menu-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px !important;
+}

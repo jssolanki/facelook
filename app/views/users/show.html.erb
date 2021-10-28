@@ -1,13 +1,12 @@
 <% if flash[:error] %>
   <h1><%= flash[:error] %></h1>
 <% end %>
-<h1><%= current_user.first_name %></h1>
+<h1><%= current_user.first_name + " " + current_user.middle_name + " " + current_user.last_name %></h1>
 
-<%= render 'form', { user: current_user } %>
+<main class="timeline-container" >
+  <div class="timeline-container-box">
+    <%= render 'posts/form', { user: current_user, post: Post.new } %>
 
-<%= link_to "Sign out", session_path, method:"delete" %>
-
-<h2>What's on your mind</h2>
-<%= render 'posts/form', { user: current_user, post: Post.new } %>
-
-<%= render current_user.posts %>
+    <%= render current_user.posts %>
+  </div>
+</main>
