@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
-
+  before_action :check_login, only: %i[new create]
+  
   def index
   end
 
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def edit

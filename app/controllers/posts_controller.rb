@@ -3,11 +3,14 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = @user.posts.create(post_params)
 
-    if @post.invalid?
-      flash[:post_error] = 'Error- please try to update an post again.'
-    end
+    flash[:post_error] = 'Error- please try to update an post again.' if @post.invalid?
 
     redirect_to edit_user_post_path(@user, @post)
+  end
+
+  def new
+    @user = User.find(params[:user_id])
+    @post = Post.new
   end
 
   def edit
@@ -19,9 +22,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
 
-    unless @post&.update(post_params)
-      flash[:post_error] = 'Error- please try to update an post again.'
-    end
+    flash[:post_error] = 'Error- please try to update an post again.' unless @post&.update(post_params)
 
     redirect_to edit_user_post_path(@user, @post)
   end
@@ -30,9 +31,7 @@ class PostsController < ApplicationController
     @user = User.find(params[:user_id])
     @post = @user.posts.find(params[:id])
 
-    unless @post&.destroy
-      flash[:post_error] = 'Error- please try to delete an post again.'
-    end
+    flash[:post_error] = 'Error- please try to delete an post again.' unless @post&.destroy
 
     redirect_to user_path(@user)
   end

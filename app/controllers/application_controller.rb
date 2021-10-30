@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
 
   before_action :require_login
-  before_action :check_login, only: %i[new create]
   helper_method :current_user
 
   def check_login

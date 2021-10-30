@@ -62,17 +62,25 @@
   text-align: left;
 }
 
-.timeline-container{
+.timeline-container {
   text-align: center;
-  .timeline-container-box{
+
+  .timeline-container-box {
     width: 590px;
     display: inline-block;
     text-align: left;
+
     .post_input {
-      width: 558px;
+      width: 100%;
     }
-    .post_btn{
+
+    .post_btn {
       width: 100%;
     }
   }
+}
+
+.like_button {
+  border-style: none;
+  background-color: #fff;
 }

@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
+  before_action :check_login, only: %i[new create]
 
   def create
     session_params = params.permit(:email, :password)

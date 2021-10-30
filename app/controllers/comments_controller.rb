@@ -26,12 +26,8 @@ class CommentsController < ApplicationController
       elem.post_id = params[:post_id]
     end
     # need to ask is there diffrent way to do this
-    if @comment.save
-      redirect_to edit_user_post_comment_path(@user, @post, @comment)
-    else
-      flash[:comment_error] = 'Error- please try to update an comment again.'
-      redirect_to user_path(@user)
-    end
+    flash[:comment_error] = 'Error- please try to update an comment again.' unless @comment.save
+    redirect_to user_path(@user)
   end
 
   def destroy

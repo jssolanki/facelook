@@ -99,6 +99,11 @@
       flex-wrap: nowrap;
       position: relative;
       justify-content: space-around;
+      background-color: #f0f2f5;
+      .footer_box_btn{
+        text-align: center;
+        width: 50%;
+      }
     }
   }
 }
