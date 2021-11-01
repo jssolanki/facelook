@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :friends, class_name: 'Friend', foreign_key: 'user_id'
   has_many :friends_with, class_name: 'Friend', foreign_key: 'friend_with_user_id'
   has_many :likes, as: :likeable
+  has_one_attached :avatar
   # validation start from here
   validates :first_name, presence: true
   validates :first_name, format: { with: /[a-zA-Z]+/, message: 'only allows letters' }

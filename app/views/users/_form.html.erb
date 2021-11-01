@@ -54,7 +54,9 @@
         <div><%= message %></div>
       <% end %>
     </div>
-
+    <div>
+      <%= form.file_field :avatar %>
+    </div>
     <div>
       <%= form.submit current_user ? "Update" : "Sign Up", class: "signup_btn" %>
     </div>

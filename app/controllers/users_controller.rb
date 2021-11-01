@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
 
     if @user.valid? && @user.update(user_edit_params)
+      @user.avatar.attach(params[:avatar])
       session[:user_id] = @user.id
     else
       flash[:error] = 'Error- please try to update an account again.'
@@ -42,10 +43,10 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:first_name, :middle_name, :last_name, :gender, :relationship, :emails, :password)
+    params.require(:user).permit(:first_name, :middle_name, :last_name, :gender, :relationship, :emails, :password, :avatar)
   end
 
   def user_edit_params
-    params.require(:user).permit(:first_name, :middle_name, :last_name, :gender, :relationship, :emails)
+    params.require(:user).permit(:first_name, :middle_name, :last_name, :gender, :relationship, :emails, :avatar)
   end
 end
