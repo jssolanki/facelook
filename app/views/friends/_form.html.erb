@@ -1,0 +1,11 @@
+<% if flash[:friend_error] %>
+    <p><%= flash[:friend_error] %></p>
+<% end %>
+
+<section>
+  <h1>Add a Friend</h1>
+  <%= form_with url: friends_path do |form| %>
+    <%= form.text_field :email %>
+    <%= form.submit “Create” %>
+  <% end %>
+</section>

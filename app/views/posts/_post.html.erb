@@ -1,10 +1,7 @@
 <div class="post-container__card">
   <div class="post-container__card-header">
     <div class="small-image-box">
-    <% if current_user.avatar.attached? %>
-      <%= image_tag current_user.avatar.variant(resize: "100x100!") %>
-      <img height="40" src="<%= post.user.avatar.variant(resize:  "100x100!") %>" width="40" alt="" />
-    <% end %>
+    <%= image_tag user_avatar(post.user ,40), width: "40px", height: "40px"  %>
     </div>
     <div class="post_container-userinfo">
     <%= link_to "#{post.user.first_name} #{post.user.middle_name} #{post.user.last_name}", user_path(post.user) %>

@@ -1,11 +1,11 @@
 class LikesController < ApplicationController
   def create
-    @like = root_data.likes.find_by(user_id: params[:user_id])
+    @like = likable_type_data.likes.find_by(user_id: params[:user_id])
 
     if @like
       @like.destroy
     else
-      @like = root_data.likes.create(user_id: params[:user_id])
+      @like = likable_type_data.likes.create(user_id: params[:user_id])
     end
 
     redirect_to user_path(current_user)
@@ -13,7 +13,7 @@ class LikesController < ApplicationController
 
   private
 
-  def root_data
+  def likable_type_data
     if params[:post_id]
       Post.find_by(id: params[:post_id])
     else

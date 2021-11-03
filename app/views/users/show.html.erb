@@ -5,8 +5,7 @@
 
 <main class="timeline-container" >
   <div class="timeline-container-box">
-    <%= render 'posts/form', { user: current_user, post: Post.new } %>
-
+    <%= render 'posts/form', { user: current_user, post: Post.new } %>    
     <%= render @user.posts %>
   </div>
 </main>

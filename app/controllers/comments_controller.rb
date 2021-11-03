@@ -1,9 +1,14 @@
 class CommentsController < ApplicationController
-  def update
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
 
+  before_action :comment_data
+
+  def comment_data
+    @user = User.find_by(id: params[:user_id])
+    @post = @user.posts.find_by(id: params[:post_id])
+    @comment = params[:id] ? @post.comments.find_by(id: params[:id]) : Comment.new
+  end
+
+  def update
     unless @comment&.update(comment_params)
       flash[:comment_error] = 'Error- please try to update an comment again.'
       redirect_to user_path(@user)
@@ -13,14 +18,9 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:post_id])
     @comment = Comment.new(comment_params) do |elem|
       elem.user_id = params[:user_id]
       elem.post_id = params[:post_id]
@@ -31,13 +31,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @post = @user.posts.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
-
-    unless @comment&.destroy
-      flash[:comment_error] = 'Error- please try to delete an Comment again.'
-    end
+    
+    flash[:comment_error] = 'Error- please try to delete an Comment again.' unless @comment&.destroy
 
     redirect_to user_path(@user)
   end

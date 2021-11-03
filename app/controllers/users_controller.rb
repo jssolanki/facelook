@@ -19,13 +19,13 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(session[:user_id])
-
+    @user.avatar.attach(params[:avatar])
     if @user.valid? && @user.update(user_edit_params)
-      @user.avatar.attach(params[:avatar])
       session[:user_id] = @user.id
     else
       flash[:error] = 'Error- please try to update an account again.'
     end
+
     redirect_to @user
   end
 
