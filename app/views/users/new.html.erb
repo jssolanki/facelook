@@ -1,0 +1,12 @@
+<section  class="signup-container" >
+  <header class="signup-header">
+    <% if flash[:error] %>
+      <h1><%= flash[:error] %></h1>
+    <% else %>
+      <h1>Sign Up</h1>
+      <span>It's quick and easy.</span>
+    <% end %>
+  </header>
+
+  <%= render 'form', { user: @user } %>
+</section>

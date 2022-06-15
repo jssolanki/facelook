@@ -1,0 +1,11 @@
+<% if flash[:error] %>
+  <h1><%= flash[:error] %></h1>
+<% end %>
+<h1><%= @user.first_name + " " + @user.middle_name + " " + @user.last_name %></h1>
+
+<main class="timeline-container" >
+  <div class="timeline-container-box">
+    <%= render 'posts/form', { user: current_user, post: Post.new } %>    
+    <%= render @user.posts %>
+  </div>
+</main>

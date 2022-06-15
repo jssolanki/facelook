@@ -1,0 +1,64 @@
+<div class="signup-container_box" >
+  <%= form_with model: user  do |form| %>
+  <div class="signup-name-box">
+    <div class="input-box" >
+      <%= form.text_field :first_name, placeholder: "First Name" %>
+      <% user.errors.full_messages_for(:first_name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div class="input-box" >
+      <%= form.text_field :middle_name, placeholder: "Middle Name" %>
+      <% user.errors.full_messages_for(:middle_name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="input-box">
+      <%= form.text_field :last_name, placeholder: "Last Name" %>
+      <% user.errors.full_messages_for(:last_name).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  </div>
+
+    <div class="input-box">
+      <%= form.text_field :emails, placeholder: "Email Address", class: 'emails' %>
+      <% user.errors.full_messages_for(:emails).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+  <% if !current_user %>
+    <div class="input-box" >
+      <%= form.label :password %>
+      <%= form.password_field :password %><br>
+      <% user.errors.full_messages_for(:password).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+  <% end %>
+    
+    <div class="input-box">
+    <%= form.label :relationship %><br>
+    <%= form.select :relationship, ['Married', 'Single', 'Live-In', 'Complicated'], default: 'public' %>
+    <% user.errors.full_messages_for(:relationship).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+
+    <div class="input-box">
+    <%= form.label :gender %><br>
+    <%= form.select :gender, ['Male', 'Female', 'Transgender'], default: 'public' %>
+    <% user.errors.full_messages_for(:gender).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+    </div>
+    <div>
+      <%= form.file_field :avatar %>
+    </div>
+    <div>
+      <%= form.submit current_user ? "Update" : "Sign Up", class: "signup_btn" %>
+    </div>
+  <% end %>
+</div>

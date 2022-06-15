@@ -1,0 +1,13 @@
+<% if flash[:post_error] %>
+    <p><%= flash[:post_error] %></p>
+<% end %>
+
+<%= form_with model: [ user, post ]  do |form| %>
+  <div>
+    <%= form.text_area :content, placeholder: "What's on your mind", class: "post_input" %>
+    <% post.errors.full_messages_for(:content).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+  <%= form.submit "Post", class: "post_btn" %>
+<% end %>

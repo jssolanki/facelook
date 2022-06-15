@@ -1,0 +1,75 @@
+.comment-container {
+  display: flex;
+  position: relative;
+  margin: 8px 0px;
+
+  .comment-container_new {
+    width: 100%;
+
+    .comment_input {
+      background-color: #f0f2f5;
+      border-radius: 18px;
+      box-sizing: border-box;
+      border-style: none;
+      width: 100%;
+      line-height: 1.34;
+      padding: 8px 12px;
+    }
+  }
+
+  .comment-container_content {
+    background-color: #f0f2f5;
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 18px;
+    border-style: none;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+
+    .comment-container_content-text {
+      flex-grow: 1;
+    }
+
+    .comment-container_content-like {
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+  }
+
+  .comment-container_edit {
+    margin-left: 11px;
+    vertical-align: middle;
+    display: inline-block;
+    width: 22px;
+  }
+
+  .comment-container_edit-box {
+    position: absolute;
+    right: 0px;
+
+    ul {
+      list-style: none;
+      border-radius: 4px;
+      box-shadow: 3px 3px 16px 3px #55555570;
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      background-color: #ffffff;
+      transition: all 0.3s ease-in;
+      padding: 0;
+      margin: 0;
+
+      li {
+        border-bottom: 1px solid #dddddd;
+        display: block;
+        padding: 8px 2em 8px 1.2em;
+        white-space: nowrap;
+        position: relative;
+        font-weight: 400;
+        color: #656565;
+      }
+    }
+  }
+}

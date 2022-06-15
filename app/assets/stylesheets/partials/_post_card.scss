@@ -1,0 +1,116 @@
+.post-container__card {
+  background-color: #fff;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 12px 0px;
+
+  .post-container__card-header {
+    position: relative;
+    padding: 12px 16px 0px 16px;
+    margin-bottom: 12px;
+    display: flex;
+
+    .post_container-userinfo {
+      width: 100%;
+    }
+
+    .post_container_edit {
+      align-items: flex-start;
+      width: 20px;
+      height: 20px;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    .post_container_edit_box {
+      position: absolute;
+      right: 12px;
+      top: 36px;
+
+      ul {
+        list-style: none;
+        border-radius: 4px;
+        box-shadow: 3px 3px 16px 3px #55555570;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        transition: all 0.3s ease-in;
+        padding: 0;
+        margin: 0;
+
+        li {
+          border-bottom: 1px solid #dddddd;
+          display: block;
+          padding: 8px 2em 8px 1.2em;
+          white-space: nowrap;
+          position: relative;
+          font-weight: 400;
+          color: #656565;
+        }
+      }
+    }
+  }
+
+  .post_container-content {
+    padding: 4px 16px 16px 16px;
+    text-align: start;
+    word-break: break-word;
+  }
+
+  .post-container-social-state {
+    margin: 0px 16px;
+    padding: 10px 0;
+    color: #656565;
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #ced0d4;
+
+    .post-container-social-state-like {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      .social-state-like-count{
+        padding-left: 6px;
+      }
+      img{
+        cursor: pointer;
+      }
+    }
+
+    .post-container-social-state-comment {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+  }
+
+  .post_container-footer {
+    margin-left: 12px;
+    margin-right: 12px;
+
+    .post_container-footer-box {
+      box-sizing: border-box;
+      display: flex;
+      flex-shrink: 0;
+      flex-wrap: nowrap;
+      position: relative;
+      justify-content: space-around;
+      background-color: #f0f2f5;
+      .footer_box_btn{
+        text-align: center;
+        width: 50%;
+      }
+    }
+  }
+}
+
+.small-image-box {
+  img {
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+}
